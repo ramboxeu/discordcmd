@@ -1,0 +1,22 @@
+{
+  "name": "discord-cmd",
+  "version": "1.0.0",
+  "description": "Huge Discord bot for small (or not) commands",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/ramboxeu/DiscordCMD.git"
+  },
+  "author": "Rambox",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/ramboxeu/DiscordCMD/issues"
+  },
+  "homepage": "https://gitlab.com/ramboxeu/DiscordCMD#README",
+  "dependencies": {
+    "discord.js": "^11.3.2"
+  }
+}
