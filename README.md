@@ -19,4 +19,4 @@ Explained in the Wiki
 * Comprex - image creator
 * Monczak - helped us improve text
 
-Note: feel free to add ideas in issues
+Note: feel free to add ideas in issues. Please tag them `idea`
