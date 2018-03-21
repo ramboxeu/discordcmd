@@ -27,4 +27,5 @@ client.on(`message`, (message) => {
     }
 })
 
-client.login(config.token);
+// I'm using config vars in Heroku to teek my token secret
+client.login(process.env.DISCORD_TOKEN);
