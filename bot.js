@@ -1,17 +1,7 @@
-const Discord = require(`discord.js`)
+const Discord = require(`discord.js`);
+const commands = require(`./commands.js`);
 
 const client = new Discord.Client();
-
-const hellos = [`Yo`, `Hello`, `Hi`, `Whats up`, `Greetings`];
-
-const man = {
-    ping: `Pong! Usage: \`>ping\` [Note]: It will be able to return ping`,
-    hello: `Say hello to bot! Usage \`>hello\``,
-    help: `Get help with commands. Usage \`>help [command]\`, command is optional`,
-    config: `Configurate `
-}
-
-const commands = require(`./commands.js`);
 
 client.on(`ready`, () => {
     console.log(`Welcome Discord users!`);
@@ -29,7 +19,7 @@ client.on(`message`, (message) => {
     try{
         message.channel.send(`> ${commands[command](message, args)}`);
     } catch(err) {
-        message.channel.send(`> Err0r command not found!`);
+        message.channel.send(`> Err0r: command not found!`);
     }
 });
 // I'm using config vars in Heroku to teek my token secret
