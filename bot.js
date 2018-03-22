@@ -22,5 +22,5 @@ client.on(`message`, (message) => {
         message.channel.send(`> Err0r: command not found!`);
     }
 });
-// I'm using config vars in Heroku to teek my token secret
+// I'm using config vars in Heroku to keep my token secret
 client.login(process.env.DISCORD_TOKEN || process.argv[2]);
