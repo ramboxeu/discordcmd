@@ -14,7 +14,7 @@ module.exports = {
             config = JSON.parse(res.last().content.slice(res.last().content.indexOf(`{`), -3));
             config.commands[opts.name] = message.id;
             res.last().edit(`\`\`\`json\n${JSON.stringify(config)}\`\`\``);
-        })
+        });
     },
     getCustomCmds: async function(guild){
         return guild.channels.find(`name`, `discordcmd-config`).fetchMessages({limit: 100});
