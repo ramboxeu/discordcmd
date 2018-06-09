@@ -19,7 +19,7 @@ client.on(`ready`, () => {
 
 client.on(`message`, (message) => {
     if(message.author.bot) return;
-    if(message.guild.channels.find(`name`, `discordcmd-config`)) if(message.channel.id === message.guild.channels.find(`name`, `discordcmd-config`).id) customCmd.createCommand(message);
+    if(message.guild.channels.find(`name`, `discordcmd-config`)) if(message.channel.id === message.guild.channels.find(`name`, `discordcmd-config`).id) return Command.create(message);
     if(message.content.indexOf(`>`) !== 0) return;  
     
     const args = message.content.slice(1).trim().split(/ +/g);

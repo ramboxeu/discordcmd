@@ -6,7 +6,7 @@ function getChannel(guild){
 
 function getRaw(guild, callback){
   guild.channels.find(`name`, `discordcmd-config`).fetchMessages({limit: 100}).then(messages => {
-    return messages.last();
+    return callback(messages.last());
   });
 }
 
@@ -14,6 +14,10 @@ function getJSON(guild, callback){
   guild.channels.find(`name`, `discordcmd-config`).fetchMessages({limit: 100}).then(messages => {
     return callback(JSON.parse(messages.last().content.slice(messages.last().content.indexOf(`{`), -3)), null);
   });
+}
+
+function makeJSON(message){
+  return JSON.parse(message.slice(message.indexOf(`{`), -3));
 }
 
 function findCommand(name, guild){
@@ -28,4 +32,4 @@ function createCommand(name, id, guild){
   return getRaw(guild).edit(`\`\`\`json\n ${JSON.stringify(getJSON(guild)[name] = id)} \n\`\`\``);
 }
 
-module.exports = {getJSON: getJSON, getRaw: getRaw, findCommand: findCommand, createCommand: createCommand, getChannel: getChannel}
+module.exports = {getJSON: getJSON, getRaw: getRaw, findCommand: findCommand, createCommand: createCommand, getChannel: getChannel, makeJSON: makeJSON}
